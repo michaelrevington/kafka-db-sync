@@ -1,0 +1,4 @@
+[submodule "kafka-dc"]
+	path = kafka-dc
+	url = https://github.com/RevingtonDev/kafka-dc.git
+	branch = main
