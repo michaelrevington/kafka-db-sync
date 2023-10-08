@@ -1,5 +1,5 @@
 {
-  "name": "mongodb-sink-connector",
+  "name": "mongodb-source-connector",
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "tasks.max": 2,
