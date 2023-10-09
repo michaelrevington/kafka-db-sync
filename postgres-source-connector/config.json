@@ -1,0 +1,21 @@
+{
+  "name": "mongodb-source-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": 2,
+    "key.converter": "io.confluent.connect.avro.AvroConverter",
+    "key.converter.schema.registry.url": "http://schema-registry:8085",
+    "key.converter.schemas.enable": "true",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8085",
+    "value.converter.schemas.enable": "true",  
+    "topic.prefix": "postgres.source",
+    "batch.size": "10",
+    "database.hostname": "postgres",
+    "database.port": 5432,
+    "database.user": "postgres",
+    "database.password": "postgres-pass",
+    "database.dbname": "$2",
+    "plugin.name": "pgoutput" 
+  }
+}
