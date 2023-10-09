@@ -1,0 +1,21 @@
+{
+    "name": "mongodb-source-connector",
+    "config": {
+        "connector.class": "com.mongodb.kafka.connect.MongoSourceConnector",
+        "tasks.max": 2,
+        "connection.uri": "mongodb://mongodb:27017",
+        "database": "",
+        "collection": "",
+        "topic.suffix": "mongodb.source",
+        "topic.separator": ".",
+        "batch.size": "10",
+        "output.format.key": "json",
+        "output.format.value": "json",
+        "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "key.converter.schemas.enable": "false",
+        "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+        "value.converter.schemas.enable": "false",
+        "internal.key.converter.schemas.enable": "false",
+        "internal.value.converter.schemas.enable": "false"
+    }
+}
