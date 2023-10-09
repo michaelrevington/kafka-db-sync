@@ -1,0 +1,24 @@
+{
+  "name": "mongodb-sink-connector",
+  "config": {
+    "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+    "tasks.max": 2,
+    "connection.uri": "mongodb://mongodb:27017",
+    "database": "ignore",
+    "collection": "",
+    "batch.size": "10",
+    "output.format.key": "json",
+    "output.format.value": "json",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "namespace.mapper": "com.mongodb.kafka.connect.sink.namespace.mapping.FieldPathNamespaceMapper",
+    "namespace.mapper.key.database.field": "database",
+    "namespace.mapper.key.collection.field": "collection",
+    "topics.regex": ".*\\.mongodb\\.sink",
+    "document.id.strategy.overwrite.existing": true,
+    "delete.on.null.values": true,
+    "document.id.strategy": "com.mongodb.kafka.connect.sink.processor.id.strategy.ProvidedInKeyStrategy"
+  }
+}
